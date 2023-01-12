@@ -53,23 +53,22 @@ class _AuthenticationScreeenState extends State<AuthenticationScreeen> {
   }
 
   login() async {
-    setState(() => _isLoading = true);
-    await Future.delayed(Duration(seconds: 2));
-    print("email: ${_email.text}, password: ${_password.text} ");
-    if (_email.text == defaultEmail && _password.text == defaultPassword) {
-      print("Login Successful");
+    String email = _email.text.trim();
+    String password = _password.text.trim();
 
+    setState(() => _isLoading = true);
+    await Future.delayed(Duration(seconds: 3)); //this is an api call
+    setState(() => _isLoading = false);
+
+    if (defaultEmail == email && password == defaultPassword) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Login Successful!'),
       ));
     } else {
-      print("Login Unsuccessful");
-
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Login Unsuccessful!'),
+        content: Text('Login Unuccessful!'),
       ));
     }
-    setState(() => _isLoading = false);
   }
 }
 
