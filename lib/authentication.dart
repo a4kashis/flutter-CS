@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_authentication/models/UserDetailsInfo.dart';
+import 'package:flutter_authentication/user_details.dart';
 
 class AuthenticationScreeen extends StatefulWidget {
   AuthenticationScreeen({Key? key}) : super(key: key);
@@ -52,25 +54,30 @@ class _AuthenticationScreeenState extends State<AuthenticationScreeen> {
     );
   }
 
-  login() async {
+  login() {
     String email = _email.text.trim();
     String password = _password.text.trim();
 
     setState(() => _isLoading = true);
-    await Future.delayed(Duration(seconds: 3)); //this is an api call
+    // await Future.delayed(Duration(seconds: 3)); //this is an api call
     setState(() => _isLoading = false);
 
     if (defaultEmail == email && password == defaultPassword) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Login Successful!'),
       ));
+      Navigator.pushNamed(
+        context,
+        "/userDetails",
+        arguments: UserDetailsInfo(name: "Hello beautiful people!"),
+      );
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Login Unuccessful!'),
       ));
     }
   }
 }
 
-const defaultEmail = "test@test.in";
+const defaultEmail = "test";
 const defaultPassword = "test";
