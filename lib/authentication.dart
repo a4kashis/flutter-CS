@@ -66,10 +66,17 @@ class _AuthenticationScreeenState extends State<AuthenticationScreeen> {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Login Successful!'),
       ));
-      Navigator.pushNamed(
+      // Navigator.pushNamed(
+      //   context,
+      //   "/userDetails",
+      //   arguments: UserDetailsInfo(name: "Hello beautiful people!"),
+      // );
+
+      Navigator.push(
         context,
-        "/userDetails",
-        arguments: UserDetailsInfo(name: "Hello beautiful people!"),
+        MaterialPageRoute(
+          builder: (context) => Container(),
+        ),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/userDetails": (context) => UserDetails(),
       },
-      home: AuthenticationScreeen(),
+      home: UserDetails(),
     );
   }
 }
