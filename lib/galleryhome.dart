@@ -170,7 +170,7 @@ class _GalleryHomeState extends State<GalleryHome> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => GalleryWidget(
-                                        urlImages: urlImages,
+                                        urlImages: transformedImages.map((img) => img['path'] as String).toList(),
                                         index: index,
                                       )));
                             },
