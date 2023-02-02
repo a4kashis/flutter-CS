@@ -15,11 +15,11 @@ class GalleryHome extends StatefulWidget {
 
 class _GalleryHomeState extends State<GalleryHome> {
   final urlImages = [
-    'assets/images/a.jpg',
-    'assets/images/b.jpg',
-    'assets/images/c.jpg',
-    'assets/images/d.jpg',
-    'assets/images/e.jpg',
+    'assets/images/a.jpeg',
+    'assets/images/b.jpeg',
+    'assets/images/c.jpeg',
+    'assets/images/d.jpeg',
+    'assets/images/e.jpeg',
   ];
   var transformedImages = [];
 
