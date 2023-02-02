@@ -52,6 +52,8 @@ class _GalleryHomeState extends State<GalleryHome> {
   void initState() {
     getSizeOfImages();
     super.initState();
+    // Refresh state once layout is loaded, gives images time to load
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
