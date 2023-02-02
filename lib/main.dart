@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_authentication/authentication.dart';
-import 'package:flutter_authentication/user_details.dart';
+import 'package:flutter_authentication/grid_view_details.dart';
+import 'package:flutter_authentication/list_view_details.dart';
+import 'package:flutter_authentication/stack_wrap_view_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        "/userDetails": (context) => UserDetails(),
+        "/userDetails": (context) => ListViewWidget(),
       },
-      home: UserDetails(),
+      home: StackWrapViewWidget(),
     );
   }
 }

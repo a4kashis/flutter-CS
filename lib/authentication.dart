@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_authentication/models/UserDetailsInfo.dart';
-import 'package:flutter_authentication/user_details.dart';
+import 'package:flutter_authentication/list_view_details.dart';
 
 class AuthenticationScreeen extends StatefulWidget {
   AuthenticationScreeen({Key? key}) : super(key: key);
